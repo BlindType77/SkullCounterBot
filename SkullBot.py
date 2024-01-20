@@ -9,7 +9,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 message_counts = {}
 emoji_counts = {}  # Dictionary to store emoji counts for users
-SkullHook = DiscordWebhook(url="https://discord.com/api/webhooks/1146517758276812980/9HB-m6OnL91-TxCg4eqfge_N_kXVxWDEGjqACnQcNcYi3qWK_otM3D93Aqnr_vpl0Eol")
+SkullHook = DiscordWebhook(url="WEBHOOK")
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user.name}')
@@ -18,7 +18,7 @@ async def on_ready():
 async def on_message(message):
     await bot.process_commands(message)  # Process commands first
     skull_emoji = '💀'
-    if message.author.id == 748638899080921158:  # Andrew's user id
+    if message.author.id == 'USERID':  # specifc user id
         emojis = ['1070071178980491415']  # Emojis for reacting
      
         
@@ -79,6 +79,6 @@ async def kill(ctx):
         await ctx.send("Counter Bot Shutting down!!")
         exit()
     
-bot.run('MTE0NjUxNDQ1MDExNTk4OTYxNA.GdPzwr.OfAEhWa7-S0YtHXv7_OuwfRza8mA-La7The3co')  # Where 'TOKEN' is your bot token
+bot.run('TOKEN')  # Where 'TOKEN' is your bot token
 
 
